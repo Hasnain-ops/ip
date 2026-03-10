@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IP Store</title>
+</head>
+
+<body>
+
+<script>
+
+fetch("https://api.ipify.org?format=json")
+.then(function(response){
+    return response.json();
+})
+.then(function(data){
+
+    var ip = data.ip;
+
+    // store IP in local storage
+    localStorage.setItem("userIP", ip);
+
+    // show message
+    alert("IP Address Successfully Stored.");
+
+});
+
+</script>
+
+</body>
+</html>
